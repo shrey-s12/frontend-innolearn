@@ -1,0 +1,73 @@
+/* CourseSection */
+/* .course-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+} */
+
+/* CourseCard */
+.course-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+}
+
+.course-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.course-details {
+    padding: 10px;
+}
+
+.course-details h3 {
+    font-size: 1.1em;
+    margin: 10px 0;
+}
+
+.course-details p {
+    font-size: 0.9em;
+    color: #666;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    font-size: 0.9em;
+    color: #f4b400;
+}
+
+.price {
+    display: flex;
+    align-items: center;
+    font-size: 1em;
+    margin-top: 10px;
+}
+
+.price span {
+    margin-right: 10px;
+}
+
+.original-price {
+    text-decoration: line-through;
+    color: #888;
+}
+
+.bestseller-tag {
+    background-color: #f4b400;
+    color: white;
+    font-size: 0.8em;
+    padding: 5px;
+    border-radius: 3px;
+    margin-top: 10px;
+    display: inline-block;
+}
