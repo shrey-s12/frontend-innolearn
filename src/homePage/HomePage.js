@@ -4,8 +4,11 @@ import CourseSection from '../components/CourseSection';
 import LearningGoalsSection from '../components/LearningGoalsSection';
 import PricingSection from '../components/PricingSection'; // Import the new Pricing Section
 import TestimonialSection from '../components/TestimonialSection'; // Import Testimonial Section
+import { useNavigate } from 'react-router-dom';
 
 const HomePage = () => {
+
+  const navigate = useNavigate();
   return (
     <div className='home'>
       {/* Hero Section 1 */}
@@ -17,7 +20,7 @@ const HomePage = () => {
           <p className="text-base md:text-lg lg:text-xl text-gray-700 mb-6">
             Technology and the world of work change fast — with us, you’re faster. Get the skills to achieve goals and stay competitive.
           </p>
-          <button className="bg-blue-600 text-white py-3 px-6 rounded-full hover:bg-blue-700 transition duration-300">
+          <button onClick={()=> navigate("/personal-plan")} className="bg-blue-600 text-white py-3 px-6 rounded-full hover:bg-blue-700 transition duration-300">
             View Plans
           </button>
         </div>
@@ -61,10 +64,7 @@ const HomePage = () => {
       <section className="bg-gray-50 py-12">
         <TestimonialSection /> {/* Testimonial Section */}
       </section>
-
-      {/* Hero Section 7 */}
       
-
     </div>
   );
 };

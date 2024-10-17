@@ -3,6 +3,7 @@ import { MdPerson } from "react-icons/md";
 import { FaUserGroup } from "react-icons/fa6";
 import { MdGroups } from "react-icons/md";
 import { FaArrowRightLong } from "react-icons/fa6";
+import { useNavigate } from 'react-router-dom';
 
 const plans = [
   {
@@ -55,6 +56,9 @@ const plans = [
 ];
 
 const PricingSection = () => {
+
+  const navigate = useNavigate();
+
   return (
     <div className="container px-4">
       <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -68,7 +72,7 @@ const PricingSection = () => {
         {plans.map((plan) => (
           <div
             key={plan.id}
-            className="border-t-8 border-purple-900 bg-white border border-gray-200 rounded-lg shadow-lg p-6 flex flex-col w-full md:w-1/3 transition-transform duration-300 hover:scale-105"
+            className="border-t-8 border-purple-900 bg-white border rounded-lg shadow-lg p-6 flex flex-col w-full md:w-1/3 transition-transform duration-300 hover:scale-105"
           >
             {/* Top border and upper part with light background */}
             <div className="bg-gray-100 rounded-t-lg p-4">
@@ -82,7 +86,10 @@ const PricingSection = () => {
 
             {/* Pricing and action button */}
             <p className="text-xl font-bold text-gray-900 mt-4">{plan.price}</p>
-            <button
+            <button onClick={() => {
+              window.scrollTo(0, 0);
+              navigate("/personal-plan");
+            }}
               className="bg-black text-white py-2 px-6 rounded-md hover:bg-gray-800 transition duration-300 mt-4 flex items-center justify-center gap-2"
             >
               {plan.title === 'Enterprise Plan' ? 'Request a demo' : 'Start subscription'}
